@@ -5,6 +5,7 @@ import { useUnidad } from "../context/UnidadContext";
 
 export default function SearchBar({ onBuscar }) {
   const [modalAbierto, setModalAbierto] = useState(false);
+  const { unidad } = useUnidad();
 
   const abrirModal = () => setModalAbierto(true);
   const cerrarModal = () => setModalAbierto(false);
@@ -24,7 +25,7 @@ export default function SearchBar({ onBuscar }) {
         const { latitude, longitude } = position.coords;
 
         try {
-          const { unidad } = useUnidad();
+          
           const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
           const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${unidad}&appid=${API_KEY}&lang=es`
