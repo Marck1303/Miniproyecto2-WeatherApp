@@ -10,7 +10,7 @@ export default function Highlights({ ciudad }) {
 
   const visibilityKm = unidad === "metric"
   ? (data?.visibility / 1000).toFixed(2)
-  : (data?.visibility / 1609.344).toFixed(2); // metros a millas
+  : (data?.visibility / 1609.344).toFixed(2);
 
   function getWindDirection(deg) {
     const directions = [
