@@ -4,7 +4,6 @@ import { useUnidad } from "../context/UnidadContext";
 export default function WeatherCard({ weather, loading }) {
   const { unidad } = useUnidad();
 
-  if (loading) return <p className="text-white">Cargando...</p>;
   if (!weather) return <p className="text-red-500">No hay datos</p>;
 
   const {
